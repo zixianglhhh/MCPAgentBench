@@ -1,5 +1,5 @@
 {
-    "concurrency": 10,
-    "num_servers": 10
+    "concurrency": 2,
+    "num_servers": 40
 }
 
