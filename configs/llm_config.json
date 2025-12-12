@@ -24,6 +24,18 @@
         "api_key_env_name": "ROUTER_API_KEY"
     },
     {
+        "model": "anthropic/claude-sonnet-4.5",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "claude",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
         "model": "x-ai/grok-4",
         "model_info": {
             "vision": true,
@@ -49,6 +61,18 @@
     },
     {
         "model": "openai/o4-mini",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "o4-mini",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "openai/gpt-5.1",
         "model_info": {
             "vision": true,
             "function_calling": true,
@@ -155,6 +179,17 @@
         "base_url": "https://jacob.api-store.store/v1"
     },
     {
+        "model": "gemini-3-pro-preview",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "gemini",
+            "structured_output": true
+        },
+        "base_url": "https://jacob.api-store.store/v1"
+    },
+    {
         "model": "kimi-k2-thinking",
         "model_info": {
             "vision": true,
@@ -199,8 +234,8 @@
             "family": "glm-4.6",
             "structured_output": true
         },
-        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key_env_name": "QWEN_API_KEY"
+        "base_url": "https://open.bigmodel.cn/api/paas/v4",
+        "api_key_env_name": "ZHIPU_API_KEY"
     },
     {
         "model": "qwen3-235b-a22b-thinking-2507",

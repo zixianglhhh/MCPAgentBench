@@ -262,19 +262,19 @@ def plot_model_size_tefs(results_dir: str = "results", output_path: str = "model
     if qwen3_data:
         qwen3_positions = [map_size_to_position(d[0]) for d in qwen3_data]
         qwen3_scores = [d[2] for d in qwen3_data]
-        ax.plot(qwen3_positions, qwen3_scores, marker='o', linewidth=2, markersize=8,
+        ax.plot(qwen3_positions, qwen3_scores, marker='o', linewidth=5, markersize=14,
                 label='Qwen3', color='#52a4d9', alpha=0.8)
     
     # Plot qwen2.5 series
     if qwen25_data:
         qwen25_positions = [map_size_to_position(d[0]) for d in qwen25_data]
         qwen25_scores = [d[2] for d in qwen25_data]
-        ax.plot(qwen25_positions, qwen25_scores, marker='s', linewidth=2, markersize=8,
+        ax.plot(qwen25_positions, qwen25_scores, marker='s', linewidth=5, markersize=14,
                 label='Qwen2.5', color='#FFbc31', alpha=0.8)
     
     # Customize chart
-    ax.set_xlabel('Model Size (B)', fontsize=14)
-    ax.set_ylabel('TEFS avg@4 (%)', fontsize=14)
+    ax.set_xlabel('Model Size (B)', fontsize=22)
+    ax.set_ylabel('TEFS avg@4 (%)', fontsize=22)
     
     # Set x-axis ticks: 4 equal-width positions
     num_ticks = len(size_categories)
@@ -284,9 +284,9 @@ def plot_model_size_tefs(results_dir: str = "results", output_path: str = "model
     ax.set_xticks(tick_positions)
     ax.set_xticklabels(tick_labels)
     
-    ax.tick_params(axis='both', labelsize=12)
+    ax.tick_params(axis='both', labelsize=20)
     ax.grid(axis='y', alpha=0.3, linestyle='--')
-    ax.legend(fontsize=12, loc='best')
+    ax.legend(fontsize=20, loc='best')
     
     # Set y-axis limits to 0-100
     ax.set_ylim(0, 100)

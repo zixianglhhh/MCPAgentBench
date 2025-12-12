@@ -84,7 +84,7 @@ def plot_tefs_tfs(results_dir: str = "results", output_path: str = "tefs_tfs_com
         tfs_vals,
         width,
         label="TFS",
-        color="#52a4d9",
+        color="#808080",
         alpha=0.8,
         edgecolor="black",
         linewidth=0.5,
