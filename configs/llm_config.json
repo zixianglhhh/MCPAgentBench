@@ -1,0 +1,360 @@
+[
+    {
+        "model": "openai/gpt-5",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "gpt-5",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "anthropic/claude-opus-4.1",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "claude",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "anthropic/claude-sonnet-4.5",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "claude",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "x-ai/grok-4",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "grok4",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "qwen/qwen3-235b-a22b-thinking-2507",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "openai/o4-mini",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "o4-mini",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "openai/gpt-5.1",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "o4-mini",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "openai/o3",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "o3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "google/gemini-2.5-pro",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "gemini",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "deepseek/deepseek-chat-v3.1",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "deepseek",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "z-ai/glm-4.6",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "glm-4.6",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "openai/gpt-5-mini",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "gpt-5",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "qwen/qwen3-32b",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "moonshotai/kimi-k2-0905",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "kimi-k2",
+            "structured_output": true
+        },
+    "base_url": "https://openrouter.ai/api/v1",
+    "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "gemini-2.5-pro",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "gemini",
+            "structured_output": true
+        },
+        "base_url": "https://jacob.api-store.store/v1"
+    },
+    {
+        "model": "gemini-3-pro-preview",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "gemini",
+            "structured_output": true
+        },
+        "base_url": "https://jacob.api-store.store/v1"
+    },
+    {
+        "model": "kimi-k2-thinking",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "kimi-k2",
+            "structured_output": true
+        },
+        "base_url": "https://api.moonshot.cn/v1",
+        "api_key_env_name": "KIMI_API_KEY"
+    },
+    {
+        "model": "deepseek-chat",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "deepseek",
+            "structured_output": true
+        },
+        "base_url": "https://api.deepseek.com/v1",
+        "api_key_env_name": "DEEPSEEK_API_KEY"
+    },
+    {
+        "model": "deepseek-reasoner",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "deepseek",
+            "structured_output": true
+        },
+        "base_url": "https://api.deepseek.com/v1",
+        "api_key_env_name": "DEEPSEEK_API_KEY"
+    },
+    {
+        "model": "glm-4.6",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "glm-4.6",
+            "structured_output": true
+        },
+        "base_url": "https://open.bigmodel.cn/api/paas/v4",
+        "api_key_env_name": "ZHIPU_API_KEY"
+    },
+    {
+        "model": "qwen3-235b-a22b-thinking-2507",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key_env_name": "QWEN_API_KEY"
+    },
+    {
+        "model": "qwen3-235b-a22b-instruct-2507",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key_env_name": "QWEN_API_KEY"
+    },
+    {
+        "model": "qwen/qwen3-32b",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "qwen/qwen3-14b",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "qwen/qwen3-8b",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "qwen/qwen3-1.7b",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen3",
+            "structured_output": true
+        },
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key_env_name": "ROUTER_API_KEY"
+    },
+    {
+        "model": "qwen2.5-72b-instruct",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen2.5",
+            "structured_output": true
+        },
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key_env_name": "QWEN_API_KEY"
+    },
+    {
+        "model": "qwen2.5-32b-instruct",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen2.5",
+            "structured_output": true
+        },
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key_env_name": "QWEN_API_KEY"
+    },
+    {
+        "model": "qwen2.5-14b-instruct",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen2.5",
+            "structured_output": true
+        },
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key_env_name": "QWEN_API_KEY"
+    },
+    {
+        "model": "qwen2.5-7b-instruct",
+        "model_info": {
+            "vision": true,
+            "function_calling": true,
+            "json_output": true,
+            "family": "qwen2.5",
+            "structured_output": true
+        },
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key_env_name": "QWEN_API_KEY"
+    }
+]

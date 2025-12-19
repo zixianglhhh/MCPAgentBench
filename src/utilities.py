@@ -173,9 +173,11 @@ def calculate_total_tokens(response_data: List[Dict[str, Any]]) -> tuple[int, in
 
 
 def calculate_total_time(response_data: List[Dict[str, Any]]) -> float:
-    """Calculate total time from all response data."""
+    """Calculate total time from all response data (sum of all task times)."""
     total_time = 0
     for response in response_data:
-        if  isinstance(response['inner_messages'], list) and response['inner_messages']:
-            total_time += response.get('task_time', 0)
+        # Sum all task times, including failed tasks
+        task_time = response.get('task_time', 0)
+        if isinstance(task_time, (int, float)):
+            total_time += task_time
     return total_time

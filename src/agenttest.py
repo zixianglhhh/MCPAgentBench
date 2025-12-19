@@ -2,9 +2,11 @@ import json
 import time
 import os
 import asyncio
+import logging
 from datetime import datetime
 from pathlib import Path
 import random
+from tqdm import tqdm
 from .config import ModelRegistry
 from autogen_ext.tools.mcp import StdioServerParams, mcp_server_tools
 from autogen_agentchat.agents import AssistantAgent
@@ -12,6 +14,11 @@ from autogen_agentchat.messages import TextMessage
 from autogen_core import CancellationToken
 
 from .utilities import flatten, serialize_response, save_data, load_data
+
+# Suppress verbose logging from MCP and autogen
+logging.getLogger("mcp").setLevel(logging.WARNING)
+logging.getLogger("autogen").setLevel(logging.WARNING)
+logging.getLogger("fastmcp").setLevel(logging.WARNING)
 
 
 def get_servers(task_correct_tools, num_servers):
@@ -44,7 +51,7 @@ def get_servers(task_correct_tools, num_servers):
     # Correct tools for task completion are first removed 
     for tool in task_correct_tools:
         try:    
-            servers_list.remove('servers\\' + tool + '.py')
+            servers_list.remove(str(servers_dir / (tool + '.py')))
         except ValueError:
             pass
 
@@ -52,7 +59,7 @@ def get_servers(task_correct_tools, num_servers):
     servers_list = random.sample(servers_list, num_servers - len(task_correct_tools))
     # Append correct tools back to the list
     for tool in task_correct_tools:
-        servers_list.append('servers\\' + tool + '.py')
+        servers_list.append(str(servers_dir / (tool + '.py')))
     random.shuffle(servers_list)
     
     return servers_list
@@ -155,8 +162,6 @@ async def process_single_task(client, task, num_servers, task_index, total_tasks
     num_tools = len(list(flatten(task_correct_tools)))
     # assert num_tools == int(task_id[8])
     
-    print(f"\n--- Processing Task {task_index + 1}/{total_tasks} (ID: {task_id}) ---")
-    print(f"Task content: {task_content}")
     task_start_time = time.time()
 
     assistant = None
@@ -184,7 +189,7 @@ async def process_single_task(client, task, num_servers, task_index, total_tasks
         response_data["task_index"] = task_index + 1
         response_data["task_content"] = task_content
         
-        print(f"✓ Task {task_index + 1} (ID: {task_id}) completed")
+        # Task completed silently
 
         await assistant.on_reset(CancellationToken())
         task_end_time = time.time()
@@ -265,21 +270,14 @@ async def generate_responses_concurrent(model, tasks_path, output_path, concurre
     Returns:
         str: Output file path
     """
-    print(f"\n{'='*80}")
-    print(f"Starting concurrent task processing")
-    print(f"Concurrency level: {concurrency} tasks at a time")
-    print(f"{'='*80}\n")
-    
     overall_start_time = time.time()
     
     # Load model and tasks
-    llm = ModelRegistry("configs/config.json").get(model)
+    llm = ModelRegistry("configs/llm_config.json").get(model)
     client = llm["client"]
-    print(f"Model: {llm['name']}\n")
     
     tasks = load_data(tasks_path)
     total_tasks = len(tasks)
-    print(f"Total tasks to process: {total_tasks}\n")
     
     # Process tasks in batches with concurrency control
     all_responses = []
@@ -297,18 +295,21 @@ async def generate_responses_concurrent(model, tasks_path, output_path, concurre
                 total_tasks=total_tasks
             )
     
-    # Create all task coroutines
-    print(f"Creating {total_tasks} task coroutines with concurrency limit of {concurrency}...\n")
+    # Execute all tasks concurrently with progress bar
+    pbar = tqdm(total=total_tasks, desc="Processing tasks", unit="task")
     
-    # Process all tasks with controlled concurrency
+    async def process_with_progress(task, index):
+        result = await process_with_semaphore(task, index)
+        pbar.update(1)
+        return result
+    
     task_coroutines = [
-        process_with_semaphore(task, i) 
+        process_with_progress(task, i)
         for i, task in enumerate(tasks)
     ]
     
-    # Execute all tasks concurrently (but limited by semaphore)
-    print(f"Starting batch processing...\n")
     all_responses = await asyncio.gather(*task_coroutines)
+    pbar.close()
     
     overall_end_time = time.time()
     total_time = overall_end_time - overall_start_time
@@ -320,18 +321,5 @@ async def generate_responses_concurrent(model, tasks_path, output_path, concurre
     
     # Save all responses to JSON file
     save_data(output_path, all_responses)
-    
-    print(f"\n{'='*80}")
-    print(f"Concurrent execution completed!")
-    print(f"{'='*80}")
-    print(f"Total execution time: {total_time:.2f} seconds")
-    print(f"Total tasks: {total_tasks}")
-    print(f"Successfully generated responses: {successful_tasks}")
-    print(f"Error when generating responses: {failed_tasks}")
-    print(f"Error list: {failed_tasks_list}")
-    print(f"Concurrency level: {concurrency}")
-    print(f"\nAll response data saved to: {output_path}")
-    print(f"File size: {os.path.getsize(output_path)} bytes")
-    print(f"{'='*80}\n")
     
     return output_path

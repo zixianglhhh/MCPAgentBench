@@ -1,0 +1,29 @@
+{
+    "skip_input_tools": [
+        "security_guidance",
+        "search_news",
+        "vector_search",
+        "search_papers",
+        "meshi_doko",
+        "execute_bigquery",
+        "search_academic_papers",
+        "wolfram_query",
+        "search_pubmed",
+        "analyze_trends",
+        "get_posts",
+        "orchestrator_plan_task",
+        "obtain_business_analysis",
+        "generate_code",
+        "system_architecture_designer",
+        "UIUX_Expert",
+        "generate_3d_assets",
+        "strategy_guide",
+        "create_ui",
+        "dmagent_ask_narrative",
+        "dmagent_ask_rule",
+        "diceRoll",
+        "Tester",
+        "execute_python_code"
+    ]
+}
+
