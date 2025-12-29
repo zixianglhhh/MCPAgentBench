@@ -1,11 +1,11 @@
-# MCPBENCH
+# MCPAgentBench
 
-MCPBENCH is a comprehensive benchmarking framework for evaluating Large Language Models (LLMs) on their ability to use tools through the Model Context Protocol (MCP). The framework tests models across various task categories including single tool usage, parallel tool execution, sequential tool chains, and multi-tool scenarios, providing detailed metrics such as Task Finish Score (TFS) and Task Efficiency Finish Score (TEFS) to assess both task completion accuracy and execution efficiency.
+MCPAgentBench is a comprehensive benchmarking framework for evaluating Large Language Models (LLMs) on their ability to use tools through the Model Context Protocol (MCP). The framework tests models across various task categories including single tool usage, parallel tool execution, sequential tool chains, and multi-tool scenarios, providing detailed metrics such as Task Finish Score (TFS) and Task Efficiency Finish Score (TEFS) to assess both task completion accuracy and execution efficiency.
 
 ## Project Structure
 
 ```
-MCPBENCH/
+MCPAgentBench/
 ├── configs/                    # Configuration files
 │   ├── config.json            # General configuration (concurrency, num_servers)
 │   ├── llm_config.json        # LLM model configurations (API endpoints, keys)
