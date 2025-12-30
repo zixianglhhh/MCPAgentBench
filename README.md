@@ -34,7 +34,7 @@ MCPAgentBench/
 ├── servers/                    # MCP server implementations
 │   └── *.py                   # Individual tool server implementations
 ├── results/                    # Experiment results
-│   ├── *_general_test_run*_results.json # Individual run results
+│   ├── qwen/                  # qwen series run results
 │   └── tool*/                 # Results organized by tool count (tool10, tool20, etc.)
 ├── logs/                       # Execution logs
 ├── runbenchmark.py            # Main entry point for running benchmarks
