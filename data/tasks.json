@@ -2186,37 +2186,6 @@
     ]
   },
   {
-    "id": "protask_3_seq_tools_20",
-    "content": "You should connect to a SQL Server using the connection string 2, then execute a BigQuery to retrieve data from the table business_data_summary in the project us-housing-project. At the same time, access a secret named rds_sqlserver_credentials and unmask it after confirmation.",
-    "tools": [
-      [
-        "Connect_SQL_Server",
-        "get_secret"
-      ],
-      [
-        "execute_bigquery"
-      ]
-    ],
-    "inputs": [
-      [
-        {
-          "connectionString": 2
-        },
-        {
-          "secret_name": "rds_sqlserver_credentials",
-          "mask_sensitive": true,
-          "confirm_unmask": ""
-        }
-      ],
-      [
-        {
-          "query": "SELECT * FROM business_data_summary",
-          "project_id": "us-housing-project"
-        }
-      ]
-    ]
-  },
-  {
     "id": "daytask_1_tool_1",
     "content": "The user wants to ask who directed the movie hellboy. The movie hellboy's imdb id is tt0167190.",
     "tools": [
