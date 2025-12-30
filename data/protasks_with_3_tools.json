@@ -106,17 +106,5 @@
         "content": "How can I establish a secure connection to BigQuery database for a large-scale movie review website, the project id is 'movie-reviews-db', and at the same time obtain security guidance to ensure safe data storage and access? The database is called 'movie_reviews_db', please connect to the database and give me the data and provide best practices for security.",
         "tools": [["connect_database", "security_guidance"], ["execute_bigquery"]],
         "inputs": [[{"database_name": "movie_reviews_db"}, {"query": "secure mysql connection for large-scale movie review website"}], [{"query": "SELECT * FROM movie_reviews", "project_id": "movie-reviews-db"}]]
-    },
-    {
-        "id": "protask_3_seq_tools_19",
-        "content": "Study the global climate change trends over the past 10 years from the perspective of Earth sciences: First, search for relevant academic papers to obtain authoritative data and research conclusions, then combine this data to analyze and model using Python to predict future climate change trends.You should use gemini-2.5-pro to generate python code and execute the code to predict the future climate change trends.",
-        "tools": [["search_academic_papers"], ["generate_code"], ["execute_python_code"]],
-        "inputs": [[{"query": "global climate change trends past decade earth sciences", "subject": "earth sciences", "max_results": "3"}], [{"prompt": "Analyze climate change trends over the past decade using Python to model and predict future changes", "language": "Python", "temperature": 0.5, "max_tokens": 500, "model": "gemini-2.5-pro"}], [{"code": "import pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\n\n# Load climate change dataset (placeholder)\ndata = pd.read_csv('climate_change_data.csv')\n\n# Prepare features and target\nX = np.array(data['Year']).reshape(-1, 1)\ny = data['AverageTemperature']\n\n# Train linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Predict future trends\nfuture_years = np.array(range(2024, 2036)).reshape(-1, 1)\npredictions = model.predict(future_years)\n\n# Plot results\nplt.plot(data['Year'], y, label='Historical Data')\nplt.plot(future_years, predictions, label='Predicted Trend', linestyle='--')\nplt.xlabel('Year')\nplt.ylabel('Global Average Temperature (°C)')\nplt.legend()\nplt.savefig('climate_change_projection.png')\nprint('Climate change model executed successfully. Projection complete.')", "packages": "pandas, numpy, scikit-learn, matplotlib"}]]
-    },
-    {
-        "id": "protask_3_seq_tools_20",
-        "content": "You should connect to a SQL Server using the connection string 2, then execute a BigQuery to retrieve data from the table business_data_summary in the project us-housing-project. At the same time, access a secret named rds_sqlserver_credentials and unmask it after confirmation.",
-        "tools": [["Connect_SQL_Server", "get_secret"], ["execute_bigquery"]],
-        "inputs": [[{"connectionString": 2}, {"secret_name": "rds_sqlserver_credentials", "mask_sensitive": true, "confirm_unmask": ""}], [{"query": "SELECT * FROM business_data_summary", "project_id": "us-housing-project"}]]
     }
 ]
