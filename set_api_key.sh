@@ -1,0 +1,6 @@
+export API_KEY=""
+export ROUTER_API_KEY=""
+export KIMI_API_KEY=""
+export DEEPSEEK_API_KEY=""
+export QWEN_API_KEY=""
+export ZHIPU_API_KEY=""
