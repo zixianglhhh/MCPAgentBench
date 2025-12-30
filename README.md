@@ -21,7 +21,7 @@ MCPAgentBench/
 │   ├── evaluate.py            # Evaluation metrics (TFS, TEFS calculation)
 │   ├── agenttest.py           # Agent testing utilities
 │   └── utilities.py           # Helper functions (tool extraction, input comparison)
-├── tools/                      # Analysis and visualization tools
+├── funcs/                      # Analysis and visualization functions
 │   ├── plot_tefs.py           # TEFS comparison chart generator
 │   ├── plot_tfs.py            # TFS comparison chart generator
 │   ├── plot_tefs_tfs.py       # Combined TEFS/TFS comparison chart
