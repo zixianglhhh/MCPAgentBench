@@ -111,7 +111,7 @@ Configure models to test. Each entry should include:
 
 #### 3. Evaluation Configuration (`configs/evaluation_config.json`)
 
-Configure tools to skip during input comparison:
+Configure tools to skip during input comparison （They are a short list of tools that are impossible to set fixed parameter values during evaluation):
 
 ```json
 {
